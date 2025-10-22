@@ -42,3 +42,23 @@ Makefile.dep
 .ccls-cache/*
 compile_commands.json
 redis.code-workspace
+
+# 本地安装相关文件
+local-install.sh
+./bin/*
+./local/*
+
+# 模块源码目录（如果不需要提交）
+modules/redisbloom/src/
+modules/redisearch/src/
+modules/redisjson/src/
+modules/redistimeseries/src/
+
+# 文档目录（如果不需要提交）
+# docs/
+
+# 其他构建产物
+*.a
+*.dylib
+*.dll
+*.exe
