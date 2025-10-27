@@ -40,7 +40,7 @@ Makefile.dep
 .idea/*
 .ccls
 .ccls-cache/*
-compile_commands.json
+# compile_commands.json
 redis.code-workspace
 
 # 本地安装相关文件
