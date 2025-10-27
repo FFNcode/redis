@@ -4911,6 +4911,7 @@ void pingCommand(client *c) {
 }
 
 void echoCommand(client *c) {
+    redisDebug("echoCommand called with argument: %s", (char *)c->argv[1]->ptr);
     addReplyBulk(c,c->argv[1]);
 }
 
