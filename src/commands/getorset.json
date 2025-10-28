@@ -1,0 +1,49 @@
+{
+    "GET_OR_SET": {
+        "summary": "Get the value of a key if it exists, otherwise set it to a default value and return it.",
+        "complexity": "O(1)",
+        "group": "string",
+        "since": "8.5.0",
+        "arity": 3,
+        "function": "getOrSetCommand",
+        "get_keys_function": "getOrSetGetKeys",
+        "command_flags": [
+            "WRITE",
+            "DENYOOM"
+        ],
+        "acl_categories": [
+            "STRING"
+        ],
+        "key_specs": [
+            {
+                "flags": [
+                    "RW",
+                    "UPDATE"
+                ],
+                "begin_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "lastkey": 0,
+                        "step": 1,
+                        "limit": 0
+                    }
+                }
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "key_spec_index": 0
+            },
+            {
+                "name": "default-value",
+                "type": "string"
+            }
+        ]
+    }
+}

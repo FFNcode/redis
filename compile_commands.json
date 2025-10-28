@@ -5486,5 +5486,37 @@
    "atomicslotmigration.xo"
   ],
   "file": "atomicslotmigration.c"
+ },
+ {
+  "directory": "/Users/huoyinghui/github/redis/src",
+  "arguments": [
+   "cc",
+   "-pedantic",
+   "-DREDIS_STATIC=",
+   "-Wno-c11-extensions",
+   "-std=gnu11",
+   "-Wall",
+   "-W",
+   "-Wno-missing-field-initializers",
+   "-Werror=deprecated-declarations",
+   "-Wstrict-prototypes",
+   "-O0",
+   "-g",
+   "-ggdb",
+   "-I../deps/hiredis",
+   "-I../deps/linenoise",
+   "-I../deps/lua/src",
+   "-I../deps/hdr_histogram",
+   "-I../deps/fpconv",
+   "-I../deps/fast_float",
+   "-I../deps/xxhash",
+   "-DINCLUDE_VEC_SETS=1",
+   "-MMD",
+   "-o",
+   "t_getorset.o",
+   "-c",
+   "t_getorset.c"
+  ],
+  "file": "t_getorset.c"
  }
 ]

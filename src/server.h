@@ -3939,6 +3939,8 @@ void psetexCommand(client *c);
 void getCommand(client *c);
 void getexCommand(client *c);
 void getdelCommand(client *c);
+void getOrSetCommand(client *c);
+int getOrSetGetKeys(struct redisCommand *cmd, robj **argv, int argc, getKeysResult *result);
 void delCommand(client *c);
 void delexCommand(client *c);
 void unlinkCommand(client *c);
