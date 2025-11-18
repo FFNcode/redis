@@ -68,7 +68,20 @@ else
 endif
 
 PREFIX?=/usr/local
-INSTALL_BIN=$(PREFIX)/bin
+# Convert relative PREFIX to absolute path relative to project root (not src directory)
+ifeq ($(filter /%,$(PREFIX)),)
+	# PREFIX is relative, make it absolute relative to project root
+	PREFIX_ABS=$(abspath ../$(PREFIX))
+else
+	# PREFIX is absolute
+	PREFIX_ABS=$(PREFIX)
+endif
+# If PREFIX ends with /bin, use it directly as INSTALL_BIN, otherwise append /bin
+ifeq ($(patsubst %/bin,%,$(PREFIX_ABS)),$(PREFIX_ABS))
+	INSTALL_BIN=$(PREFIX_ABS)/bin
+else
+	INSTALL_BIN=$(PREFIX_ABS)
+endif
 INSTALL=install
 PKG_CONFIG?=pkg-config
 
